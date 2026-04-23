@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2501110080_오수한_포트폴리오_(인터랙션)</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward" />
+
+    <style>
+        body {
+            margin: 0;
+            height: 2000px;;
+        }
+        section {
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+        }
+        section:nth-child(odd) {
+            background-color: #d5f5ff;
+        }
+        .wrapper {
+            padding-top: 88px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            color: rgb(68, 168, 207);
+            font-size: 48px;
+        }
+        h2 {
+            
+            font-size: 35px;
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .btns {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        .btns .container {
+            position: relative;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #333;
+            margin: auto;
+        }
+        .btns_menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btns_menu .btn {
+            font-size: 16px;
+            font-weight: 600;
+            color: #193a40;
+            width: 150px;
+            height: 40px;
+            border-radius: 6px;
+            margin: 4px;
+            cursor: pointer;
+            background-color: #9ad2d9;
+        }
+
+        .btns_menu .btn:hover {
+            background-color: #ffffff;
+            /* border: 1px solid white; */
+        }
+        button {
+            border: none;
+            outline: none;
+        }
+        .arrow-up {
+            position: fixed;
+            bottom: 60px;
+            right: 50px;
+            width: 70px;
+            height: 70px;
+            color: white;
+            background-color: skyblue;
+            border-radius: 50%;
+            opacity: .0;
+            transition: opacity .3s;
+            cursor: pointer;  /* 마우스 올렸을 때 손가락 모양으로 바뀌게 하는 것 */
+        }
+        .arrow-up span {
+            font-size: 50px;
+        }
+        .arrow-up.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="arrow-up">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+    <div class="btns">
+        <div class="container">
+            <div class="btns_menu">
+                <button class = "btn home">Home</button>
+                <button class = "btn about">about</button>
+                <button class = "btn skill">skill</button>
+                <button class = "btn works">works</button>
+                <button class = "btn contact">contact</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="wrapper">
+            <h1>Home</h1>
+            <h2>Loren ipsum dolor sit amet.</h2>
+            <h3>Loren ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatum</h3>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="wrapper">
+            <h1>About</h1>
+            <h2>Loren ipsum dolor sit amet.</h2>
+            <h3>Loren ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+    </section>
+
+    <section id="skill">
+        <div class="wrapper">
+            <h1>Skill</h1>
+            <h2>Loren ipsum dolor sit amet.</h2>
+            <h3>Loren ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+    </section>
+
+    <section id="works">
+        <div class="wrapper">
+            <h1>Works</h1>
+            <h2>Loren ipsum dolor sit amet.</h2>
+            <h3>Loren ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="wrapper">
+            <h1>Contact</h1>
+            <h2>Loren ipsum dolor sit amet.</h2>
+            <h3>Loren ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+    </section>
+    <script>
+        const arrowUp = document.querySelector('.arrow-up');
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+            console.log(window.scrollY);
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior: "smooth", block: "center"});  //맨위로
+        })
+
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior: "smooth", block: "center"});
+        })
+
+        const btnAbout = document.querySelector('.about');
+        const sectionAbout = document.querySelector('#about');  //about으로 
+
+        btnAbout.addEventListener('click', function() {
+            sectionAbout.scrollIntoView({behavior: "smooth", block: "center"});
+        })
+
+        const btnSkill = document.querySelector('.skill');
+        const sectionSkill = document.querySelector('#skill');  //skill으로 
+
+        btnSkill.addEventListener('click', function() {
+            sectionSkill.scrollIntoView({behavior: "smooth", block: "center"});
+        })
+
+        const btnWorks = document.querySelector('.works');
+        const sectionWorks = document.querySelector('#works');  //works으로 
+
+        btnWorks.addEventListener('click', function() {
+            sectionWorks.scrollIntoView({behavior: "smooth", block: "center"});
+        })
+
+        const btnContact = document.querySelector('.contact');
+        const sectionContact = document.querySelector('#contact');  //contact으로 
+
+        btnContact.addEventListener('click', function() {
+            sectionContact.scrollIntoView({behavior: "smooth", block: "center"});
+        })
+    </script>
+</body>
+</html>
